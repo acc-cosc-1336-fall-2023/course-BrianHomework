@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "devprocess"
+    ],
+    "python.analysis.extraPaths": [
+        "./src/examples/c_decisions"
     ]
 }
