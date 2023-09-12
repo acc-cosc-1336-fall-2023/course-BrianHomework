@@ -31,3 +31,8 @@ def is_vowel(letter):
 def is_consonant(letter):
     result = letter != 'a' and letter != 'e' and letter != 'i' and letter !='o' and letter != 'u'
     return result
+
+def is_overtime(hours):
+      result =- False
+      result = hours > 40
+      return result
