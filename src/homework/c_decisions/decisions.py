@@ -21,3 +21,5 @@ def get_faculty_rating(ratio):
     else:
         result = "Unacceptable"
         return result
+    
+        print(result)
