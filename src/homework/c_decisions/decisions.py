@@ -2,24 +2,31 @@
 #The function get_options_ratio will return the ratio of options divided by total.
 
 def get_options_ratio(option, total):
-    result = option / total
-    return result
+
+    ratio = option / total
+    return ratio
 
 def get_faculty_rating(ratio):
-    if ratio >= 0.9:
+    result = ""
+
+    if (ratio >= .9 and ratio <= 1): 
         result = "Excellent"
-        return result
-    elif ratio > 0.8:
+        
+    elif(ratio >= 0.8 and ratio < .9):
         result = "Very Good"
-        return result
-    elif ratio > 0.7:
+        
+    elif(ratio >= 0.7 and ratio < 0.8):
         result = "Good"
-        return result
-    elif ratio > 0.6:
-        result = "Needs improvement"
-        return result
-    else:
-        result = "Unacceptable"
-        return result
     
-        print(result)
+    elif(ratio >= 0.6 and ratio < 0.7):
+        result = "Needs Improvement"
+
+    elif(ratio >= 0.0 and ratio  < 0.6):
+        result = "Unacceptable"
+
+    else:
+        result = "Invalid"
+        
+    return result
+    
+    
