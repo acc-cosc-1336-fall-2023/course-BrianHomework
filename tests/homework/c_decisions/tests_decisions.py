@@ -1,4 +1,5 @@
 #
+
 import unittest
 
 from src.homework.c_decisions.decisions import get_options_ratio
@@ -34,5 +35,3 @@ class Test_Config(unittest.TestCase):
 
     # Test case 7: ratio is 0 (edge case)
         self.assertEqual(get_faculty_rating(0), "Unacceptable")
-        
-    

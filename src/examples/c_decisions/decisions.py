@@ -60,11 +60,6 @@ def display_menu():
      print("2-if else")
      print("3-if elif")
 
-def display_menu():
-    print("1-Simple if")
-    print("2-if else")
-    print("3-if elif")
-
 def run_menu():
     display_menu()
     option = input("Enter a menu option(1, 2, or 3): ")

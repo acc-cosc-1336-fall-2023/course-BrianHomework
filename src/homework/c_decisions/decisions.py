@@ -28,5 +28,3 @@ def get_faculty_rating(ratio):
         result = "Invalid"
         
     return result
-    
-    
