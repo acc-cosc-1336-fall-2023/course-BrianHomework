@@ -8,14 +8,21 @@ from src.homework.e_functions.value_return import get_seconds
 
 class Test_Config(unittest.TestCase):
 
-#Test get hour
-#Test that get_hour with parameter value 3800 returns the value 1.
-#Test that get_hour with parameter value 3600 returns the value 1.
 
-#Test get minutes
-#Test that get_minutes with parameter value 3800 returns the value 3.
-#Test that get_minutes with parameter value 3600 returns the value 0.
+    def test_get_hour_3800(self):
+        self.assertEqual(get_hour(3800), 1)
 
-#Test case function test_get_seconds
-#Test that get_seconds with parameter value 3800 returns the value 20.
-#Test that get_seconds with parameter value 3600 returns the value 0.
+    def test_get_hour_3600(self):
+        self.assertEqual(get_hour(3600), 1)
+
+    def test_get_minutes_3800(self):
+        self.assertEqual(get_minutes(3800), 3)
+
+    def test_get_minutes_3600(self):
+        self.assertEqual(get_minutes(3600), 0)
+
+    def test_get_seconds_3800(self):
+        self.assertEqual(get_seconds(3800), 20)
+
+    def test_get_seconds_3600(self):
+        self.assertEqual(get_seconds(3600), 0)
