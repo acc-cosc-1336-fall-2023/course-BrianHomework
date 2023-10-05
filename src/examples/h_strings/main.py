@@ -6,5 +6,5 @@ lang = "python"
 
 print(lang)
 print(len(lang))
-print(lang[1],lang[3])
+print(lang[2])
 
