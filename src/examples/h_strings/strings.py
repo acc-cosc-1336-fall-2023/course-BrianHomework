@@ -34,3 +34,6 @@ text = ('fuck coding')
 for char in text:
     print(char)
 '''
+
+def search_in_string(str1, str2):
+    return str1 in str2
