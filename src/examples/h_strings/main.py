@@ -12,3 +12,4 @@ lang = lang.replace('y', 'Y').replace('o', 'O')#chain the replace statement
 print(lang)
 """
 
+strings.use_repetition_operator(10)
