@@ -8,7 +8,6 @@ def get_factorial(num):
             factorial *= i
         return factorial
 
-
 def sum_odd_numbers(num):
     sum_odd = 0
     start_number = 1
@@ -37,8 +36,8 @@ def run_menu_option(choice):
     if(choice == '2'):
         choice_2_selected()
     if(choice == '3'):
-        option_3_selected()
-    if(choice != '1', '2', '3'):
+        exit_menu()
+    if(choice != '1' and choice != '2' and choice  != '3'):
         print("The option you input is not valid, Please select from 1-3: ")
 
         run_menu()
@@ -86,11 +85,11 @@ def option_3_selected():
 
 def exit_menu():
     while True:
-        continued = input("Do you want to continue Y or N: ")
-        if continued == "Y" or continued == 'y':
+        Exit = input("Do you want to Exit Y or N: ")
+        if Exit == "N" or Exit == 'n':
             run_menu()
             break
-        if continued == "N" or continued == "n":
+        if Exit == "Y" or Exit == "y":
             print("Exiting Program")
             break
         else:
