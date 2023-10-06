@@ -1,5 +1,3 @@
-#
-# Import necessary functions and modules (none required in this code).
 
 # Define a function to calculate Hamming Distance between two DNA strings.
 def get_hamming_distance(dna1, dna2):
@@ -100,7 +98,4 @@ def main():
             else:
                 print("That input is not a Y or N, please try again.")
 
-# Start the program if run as the main script.
-if __name__ == "__main__":
-    main()
 
