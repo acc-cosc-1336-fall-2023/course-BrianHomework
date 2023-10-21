@@ -1,4 +1,4 @@
-#
+#Main functions to do the maths
 
 def get_p_distance(list1, list2):
     if len(list1) != len(list2):

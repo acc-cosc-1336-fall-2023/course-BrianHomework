@@ -9,10 +9,9 @@ def get_valid_sequence_count():
     while True:
         n = input("Enter the number of sequences: ")
         if not n.isdigit():
-            print("Invalid input. Please enter a valid number for the number of sequences.")
+            print("Invalid input. Please enter a number for the 'number of sequences.' ")
         else:
             return int(n)
-
 
 while True:
     print("\nMenu:")
@@ -46,7 +45,7 @@ while True:
                 break
         
         distance_matrix = get_p_distance_matrix(sequences)
-        print("P-distance matrix:")
+        print("P-distance matrix is:")
         for row in distance_matrix:
             print(' '.join(f'{distance:.5f}' for distance in row))
     elif choice == '2':

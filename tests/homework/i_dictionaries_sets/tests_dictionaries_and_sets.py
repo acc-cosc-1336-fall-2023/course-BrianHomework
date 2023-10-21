@@ -1,8 +1,7 @@
 #
 import unittest
 
-from src.homework.i_dictionaries_sets.dictionary import get_p_distance
-from src.homework.i_dictionaries_sets.dictionary import get_p_distance_matrix
+from src.homework.i_dictionaries_sets.dictionary import get_p_distance, get_p_distance_matrix
 
 class Test_Config(unittest.TestCase):
 
