@@ -1,31 +1,34 @@
 #
 import unittest
 
-from src.homework.i_dictionaries_sets.dictionary import get_p_distance, get_p_distance_matrix
+from src.homework.i_dictionaries_sets.dictionary import add_inventory, remove_inventory_widget
 
 class Test_Config(unittest.TestCase):
 
-    def test_get_p_distance(self):
-        list1 = ['T', 'T', 'T', 'C', 'C', 'A', 'T', 'T', 'T', 'A']
-        list2 = ['G', 'A', 'T', 'T', 'C', 'A', 'T', 'T', 'T', 'C']
-        result = get_p_distance(list1, list2)
-        self.assertEqual(result, 0.4)
+    def test_add_inventory(self):
+        inventory = {}  # Initialize an empty inventory dictionary
 
-    def test_get_p_distance_matrix(self):
-        sequences = [
-            ['T', 'T', 'T', 'C', 'C', 'A', 'T', 'T', 'T', 'A'],
-            ['G', 'A', 'T', 'T', 'C', 'A', 'T', 'T', 'T', 'C'],
-            ['T', 'T', 'T', 'C', 'C', 'A', 'T', 'T', 'T', 'T'],
-            ['G', 'T', 'T', 'C', 'C', 'A', 'T', 'T', 'T', 'A']
-        ]
-        expected_matrix = [
-            [0.0, 0.4, 0.1, 0.1],
-            [0.4, 0.0, 0.4, 0.3],
-            [0.1, 0.4, 0.0, 0.2],
-            [0.1, 0.3, 0.2, 0.0]
-        ]
-        result = get_p_distance_matrix(sequences)
+        # Adding Widget1 with quantity of 10
+        add_inventory(inventory, 'Widget1', 10)
+        self.assertEqual(inventory['Widget1'], 10)
 
-        for i in range(len(sequences)):
-            for j in range(len(sequences)):
-                self.assertEqual(result[i][j], expected_matrix[i][j])
+        # Updating the existing Widget1 with quantity of 25
+        add_inventory(inventory, 'Widget1', 25)
+        self.assertEqual(inventory['Widget1'], 35)
+
+        # Updating the existing Widget1 with a negative quantity
+        add_inventory(inventory, 'Widget1', -10)
+        self.assertEqual(inventory['Widget1'], 25)
+
+    def test_remove_inventory_widget(self):
+        inventory = {}  # Initialize an empty inventory dictionary
+
+        # Adding two widgets with quantities of your choice
+        add_inventory(inventory, 'Widget1', 10)
+        add_inventory(inventory, 'Widget2', 15)
+
+        # Removing Widget1
+        result = remove_inventory_widget(inventory, 'Widget1')
+        self.assertEqual(result, 'Record deleted')
+        self.assertEqual(len(inventory), 1)  # Length of dictionary should be 1
+        self.assertIn('Widget2', inventory)  # Widget2 should still exist
