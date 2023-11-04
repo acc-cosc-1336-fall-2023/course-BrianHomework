@@ -1,31 +1,36 @@
 #
 
-#sets
-baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
-basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
+import unittest
 
-#Finding the intersection of the sets
-intersection = baseball.intersection(basketball)
-print("Students who play both sports:", intersection)  
+class TestSetOperations(unittest.TestCase):
+    def setUp(self):
+        self.baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
+        self.basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
 
-#Finding the union of the sets
-union = baseball.union(basketball)
-print("Students who play either sport:", union)  
+    def test_intersection(self):
+        intersection_result = self.baseball.intersection(self.basketball)
+        expected_intersection = {'Carmen', 'Alicia'}
+        self.assertEquals(intersection_result, expected_intersection)
 
-#Finding the difference of baseball and basketball sets
-difference_baseball = baseball.difference(basketball)
-print("Students who play baseball but not basketball:", difference_baseball)  
+    def test_union(self):
+        union_result = self.baseball.union(self.basketball)
+        expected_union = {'Jodi', 'Carmen', 'Aida', 'Alicia', 'Eva', 'Sarah'}
+        self.assertEquals(union_result, expected_union)
 
-#Finding the difference of basketball and baseball sets
-difference_basketball = basketball.difference(baseball)
-print("Students who play basketball but not baseball:", difference_basketball)  
-#Finding the difference of baseball and basketball sets (baseball - basketball)
-difference_baseball = baseball.difference(basketball)
-print("Students who play baseball but not basketball:", difference_baseball)
+    def test_difference_baseball(self):
+        difference_result = self.baseball.difference(self.basketball)
+        expected_difference = {'Jodi', 'Aida'}
+        self.assertEquals(difference_result, expected_difference)
 
-#Finding the symmetric difference of the sets
-symmetric_difference = baseball.symmetric_difference(basketball)
-print("Students who play one sport but not both:", symmetric_difference)
+    def test_difference_basketball(self):
+        difference_result = self.basketball.difference(self.baseball)
+        expected_difference = {'Eva', 'Sarah'}
+        self.assertEquals(difference_result, expected_difference)
+
+    def test_symmetric_difference(self):
+        symmetric_difference_result = self.baseball.symmetric_difference(self.basketball)
+        expected_symmetric_difference = {'Jodi', 'Eva', 'Aida', 'Sarah'}
+        self.assertEquals(symmetric_difference_result, expected_symmetric_difference)
 
 
 
